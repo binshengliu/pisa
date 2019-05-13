@@ -22,3 +22,6 @@ Testing/
 docs/_build/
 
 node_modules
+
+.dir-locals.el
+compile_commands.json
