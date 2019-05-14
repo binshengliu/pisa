@@ -13,7 +13,7 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/CLI11 EXCLUDE_FROM_ALL)
 
 # stxxl
 add_definitions(-DSTXXL_VERBOSE_LEVEL=-10) # suppress messages to stdout
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/stxxl)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/stxxl EXCLUDE_FROM_ALL)
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${STXXL_CXX_FLAGS}")
 include_directories(${STXXL_INCLUDE_DIRS})
 set_target_properties(stxxl PROPERTIES
@@ -83,35 +83,35 @@ target_compile_options(ParallelSTL INTERFACE -Wno-unused-parameter
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/GSL EXCLUDE_FROM_ALL)
 
 # Add Boost
-add_subdirectory(boost-cmake)
+add_subdirectory(boost-cmake EXCLUDE_FROM_ALL)
 
 # Add Catch
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Catch2)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Catch2 EXCLUDE_FROM_ALL)
 
 # Add Porter2
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Porter2)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Porter2 EXCLUDE_FROM_ALL)
 
 # Add KrovetzStemmer
 set(KrovetzStemmer_ENABLE_TESTING OFF CACHE BOOL "skip trecpp testing")
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/KrovetzStemmer)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/KrovetzStemmer EXCLUDE_FROM_ALL)
 
 # Add warcpp
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/warcpp)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/warcpp EXCLUDE_FROM_ALL)
 
 # Add trecpp
 set(TRECPP_ENABLE_TESTING OFF CACHE BOOL "skip trecpp testing")
 set(TRECPP_BUILD_TOOL OFF CACHE BOOL "skip trecpp testing")
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/trecpp)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/trecpp EXCLUDE_FROM_ALL)
 
 # Add trecpp
 set(WAPOPP_ENABLE_TESTING OFF CACHE BOOL "skip wapopp testing")
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/wapopp)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/wapopp EXCLUDE_FROM_ALL)
 
 # Add fmt
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/fmt)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/fmt EXCLUDE_FROM_ALL)
 
 # Add spdlog
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/spdlog)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/spdlog EXCLUDE_FROM_ALL)
 
 # Add range-v3
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/range-v3)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/range-v3 EXCLUDE_FROM_ALL)
