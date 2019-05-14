@@ -69,6 +69,8 @@ tbb_build(
     TBB_ROOT ${TBB_ROOT}
     CONFIG_DIR TBB_DIR)
 # find_package(TBB REQUIRED tbb)
+# build/external/tbb_cmake_build/tbb_cmake_build_subdir_release/libtbb.so.2
+# should be installed as dependencies
 
 # Add ParallelSTL
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/parallelstl EXCLUDE_FROM_ALL)
