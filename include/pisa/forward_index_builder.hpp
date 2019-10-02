@@ -22,6 +22,8 @@
 #include <spdlog/spdlog.h>
 #include <tbb/concurrent_queue.h>
 #include <tbb/task_group.h>
+#include <KrovetzStemmer/KrovetzStemmer.hpp>
+#include <boost/algorithm/string.hpp>
 
 #include "binary_collection.hpp"
 #include "io.hpp"
@@ -151,6 +153,11 @@ class Forward_Index_Builder {
 
         std::map<std::string, uint32_t> map;
 
+        stem::KrovetzStemmer kstemmer;
+        process_term = [&kstemmer](std::string &&term) -> std::string {
+            boost::algorithm::to_lower(term);
+            return kstemmer.kstem_stemmer(term);
+        };
         for (auto &&record : bp.records) {
             title_os << record.title() << '\n';
             url_os << record.url() << '\n';
